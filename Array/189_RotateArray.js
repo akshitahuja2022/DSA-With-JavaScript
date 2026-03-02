@@ -12,7 +12,6 @@ var rotate = function (nums, k) {
   }
 };
 
-
 // 2nd approach with extra space BigO(1)extra space
 var rotate = function (nums, k) {
   let temp = new Array(nums.length);
@@ -23,3 +22,23 @@ var rotate = function (nums, k) {
     nums[i] = temp[i];
   }
 };
+
+
+// 3rd approach using reverse function
+var rotate = function (nums, k) {
+  k = k % nums.length;
+  reverse(nums, 0, nums.length - 1);
+  reverse(nums, 0, k - 1);
+  reverse(nums, k, nums.length - 1);
+};
+
+function reverse(nums, i, j) {
+  while (i < j) {
+    let temp = nums[i];
+    nums[i] = nums[j];
+    nums[j] = temp;
+    i++;
+    j--;
+  }
+  return nums;
+}
