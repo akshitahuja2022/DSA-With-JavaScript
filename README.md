@@ -1,9 +1,9 @@
 # 🚀 DSA with JavaScript
 
-A complete collection of Data Structures and Algorithms (DSA) implemented in JavaScript.
-This repository is part of my journey to master problem-solving and crack coding interviews.
+A comprehensive collection of Data Structures and Algorithms (DSA) implemented in JavaScript (ES6+).
+This repository documents my journey to master problem-solving and prepare for technical coding interviews.
 
-## The goal is to strengthen:
+## The primary goal is to build strong fundamentals and improve:
 
 🧠 Logic building
 
@@ -11,6 +11,9 @@ This repository is part of my journey to master problem-solving and crack coding
 
 ⚡ Coding efficiency using JavaScript
 
+🎯 Interview readiness
+
+All problems are practiced from LeetCode and organized with clean, well-structured solutions and explanations.
 
 ## 🛠 Tech Stack
 
