@@ -34,3 +34,13 @@ var missingNumber = function (nums) {
   }
   return sum1 - sum2;
 };
+
+// otimal solution - xor method O(n) + O(1) with space
+var missingNumber = function (nums) {
+  let xor = nums.length;
+
+  for (let i = 0; i < nums.length; i++) {
+    xor = xor ^ i ^ nums[i];
+  }
+  return xor;
+};
