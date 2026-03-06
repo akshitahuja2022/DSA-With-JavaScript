@@ -1,6 +1,7 @@
 // 268 Missing Number
 
-// Big O(n2) -- brute force method
+// brute force method Big O(n2) , O(1) space complexity
+
 var missingNumber = function (nums) {
   let n = nums.length;
 
@@ -17,4 +18,19 @@ var missingNumber = function (nums) {
       return i;
     }
   }
+};
+
+// Better Solution is Hashing
+
+// otimal solution - sum method O(n) + O(1) with space
+
+var missingNumber = function (nums) {
+  let n = nums.length;
+  // first n natural no. sum  (o to n sum)
+  let sum1 = (n * (n + 1)) / 2;
+  let sum2 = 0;
+  for (let i = 0; i < n; i++) {
+    sum2 = sum2 + nums[i];
+  }
+  return sum1 - sum2;
 };
