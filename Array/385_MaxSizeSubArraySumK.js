@@ -37,7 +37,7 @@ var longestLength = (arr, k) => {
 
 // Better Solution -- Hashing
 
-// Optimal Solution - O(n)
+// Optimal Solution - O(n) + O(n) -> O(n^2)
 var longestLength = (arr, k) => {
   let i = 0;
   let j = 0;
