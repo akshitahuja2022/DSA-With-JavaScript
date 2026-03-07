@@ -20,7 +20,7 @@ var longestLength = (arr, k) => {
   return length;
 };
 
-// Better Solution - O(n) + O(n) => O(n^2)
+// Brute Force method - O(n) + O(n) => O(n^2)
 var longestLength = (arr, k) => {
   let length = 0;
   for (let i = 0; i < arr.length; i++) {
@@ -33,6 +33,31 @@ var longestLength = (arr, k) => {
     }
   }
   return length;
+};
+
+// Better Solution -- Hashing
+
+// Optimal Solution - O(n)
+var longestLength = (arr, k) => {
+  let i = 0;
+  let j = 0;
+
+  let sum = 0;
+  let maxLen = 0;
+
+  while (j < arr.length) {
+    sum = sum + arr[j];
+
+    while (sum > k) {
+      sum = sum - arr[i];
+      i++;
+    }
+    if (sum === k) {
+      maxLen = Math.max(maxLen, j - i + 1);
+    }
+    j++;
+  }
+  return maxLen;
 };
 
 console.log(longestLength(arr, 3));
