@@ -1,0 +1,23 @@
+// 385 Maximum Size Subarray Sum Equals K
+let arr = [1, 2, 3, 1, 1, 1, 1, 4, 2, 3];
+let k = 3;
+
+// brute force method -- O(n) + O(n) + O(n) -- O(n^3)
+var longestLength = (arr, k) => {
+  let length = 0;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i; j < arr.length; j++) {
+      let sum = 0;
+      for (let m = i; m < j; m++) {
+        sum += arr[m];
+
+        if (sum === k) {
+          length = sum;
+        }
+      }
+    }
+  }
+  return length;
+};
+
+console.log(longestLength(arr, 3));
