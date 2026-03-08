@@ -48,7 +48,11 @@ var majorityElement = function (nums) {
   }
 };
 
-// Optimal Solution O(n)
+/*
+Optimal Solution O(n) 
+Moorre's voting alogorithm - Moore’s Voting Algorithm is used to find the majority element in an 
+array.
+*/
 var majorityElement = function (nums) {
   let ans = nums[0];
   let i = 0;
