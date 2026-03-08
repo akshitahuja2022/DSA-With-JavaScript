@@ -16,7 +16,10 @@ var maxSubArray = (nums, k) => {
   return maxSum;
 };
 
-// optimal solution - O(n)
+/*
+ optimal solution - O(n) 
+ kadane's algorithm 
+*/
 var maxSubArray = function (nums) {
   let maxSum = -Infinity;
   let sum = 0;
@@ -33,5 +36,34 @@ var maxSubArray = function (nums) {
     }
     i++;
   }
+  return maxSum;
+};
+
+// Interview question
+// print the subarray with maxsum
+var maxSubArray = function (nums) {
+  let maxSum = -Infinity;
+  let sum = 0;
+  let i = 0;
+  let ansStart = -1;
+  let ansEnd = -1;
+  while (i < nums.length) {
+    if (sum === 0) {
+      start = i;
+    }
+    sum = sum + nums[i];
+
+    if (sum > maxSum) {
+      maxSum = sum;
+      ansStart = start;
+      ansEnd = i;
+    }
+
+    if (sum < 0) {
+      sum = 0;
+    }
+    i++;
+  }
+  console.log("Subarray:", nums.slice(ansStart, ansEnd + 1));
   return maxSum;
 };
