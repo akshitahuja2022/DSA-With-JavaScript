@@ -22,6 +22,32 @@ var majorityElement = function (nums) {
 
 // Better Solution - hashing O(n logn)
 
+// Brute Force method - O(n^2)
+var majorityElement = function (nums) {
+  let n = nums.length;
+  for (let i = 0; i < nums.length; i++) {
+    var count = 0;
+    for (let j = 0; j < nums.length; j++) {
+      if (nums[i] === nums[j]) count++;
+    }
+    if (count > n / 2) return nums[i];
+  }
+};
+
+// Better Solution - hashing O(n logn) /  O(n)
+var majorityElement = function (nums) {
+  let map = new Map();
+  let n = nums.length;
+
+  for (let i = 0; i < n; i++) {
+    map.set(nums[i], (map.get(nums[i]) || 0) + 1);
+
+    if (map.get(nums[i]) > n / 2) {
+      return nums[i];
+    }
+  }
+};
+
 // Optimal Solution O(n)
 var majorityElement = function (nums) {
   let ans = nums[0];
