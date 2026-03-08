@@ -28,7 +28,10 @@ var sortColors = function (nums) {
   }
 };
 
-// Optimal Solution O(n) and O(1) spcar complexity
+/*
+ Optimal Solution O(2n) and O(1) spcar complexity 
+ and this algorith dutch national algorithm
+ */
 var sortColors = function (nums) {
   let i = 0;
   let j = 0;
