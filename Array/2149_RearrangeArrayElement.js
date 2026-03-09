@@ -1,6 +1,10 @@
 // 2149 Rearrange Array Elements
 
-// Brute force solution - O(n) + O(n) - O(n^2) and space O(n)
+/* Important notice -- in this case 2149 question pos === neg but if pos!==neg then 
+1. pos>neg and 2. neg>pos so for that case brute force solution is best 
+*/
+
+// Brute force solution - O(n) + O(n/2) and space O(n)
 let nums = [3, 1, -2, -5, 2, -4];
 
 var rearrangeArray = function (nums) {
@@ -23,7 +27,7 @@ var rearrangeArray = function (nums) {
 
 // Optimal Solution - O(n) and space O(n)
 var rearrangeArray = function (nums) {
-let ans = new Array(nums.length).fill(0);
+  let ans = new Array(nums.length).fill(0);
   let k = 0;
   let j = 1;
   for (let i = 0; i < nums.length; i++) {
