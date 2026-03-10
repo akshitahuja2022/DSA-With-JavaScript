@@ -28,4 +28,27 @@ function linear(arr, num) {
   return false;
 }
 
-console.log(longestConsecutive(nums));
+// Better solution - O(n) and for sorting O(n)
+var longestConsecutive = function (nums) {
+  if (nums.length === 0) return 0;
+  nums.sort((a, b) => a - b);
+  let longest = 1;
+  let count = 0;
+  let lastSmaller = -Infinity;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] - 1 === lastSmaller) {
+      count++;
+      console.log(count);
+      lastSmaller = nums[i];
+    } else if (nums[i] !== lastSmaller) {
+      count = 1;
+      lastSmaller = nums[i];
+    }
+
+    if (count > longest) {
+      longest = count;
+    }
+  }
+  return longest;
+};
+
