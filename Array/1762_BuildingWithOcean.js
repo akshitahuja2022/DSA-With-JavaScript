@@ -25,7 +25,7 @@ var leaders = () => {
 // Optimal solution - O(n) and space for store the leaders O(n)
 function leaders(arr) {
   let arr2 = [];
-  let max = -Infinity; // max depend on the constraints
+  let max = -Infinity;
 
   for (let i = arr.length - 1; i >= 0; i--) {
     if (arr[i] > max) {
