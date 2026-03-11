@@ -65,3 +65,52 @@ var setZeroes = function (matrix) {
     }
   }
 };
+
+
+// Optimal Solution - O(2*n*m)
+var setZeroes = function (matrix) {
+  let m = matrix.length; // row
+  let n = matrix[0].length; // col
+  let col0 = 1;
+//   let col = matrix[0][...];
+//   let row = matrix[...][0];
+
+  for (let i = 0; i < m; i++) {
+    for (let j = 0; j < n; j++) {
+      if (matrix[i][j] === 0) {
+        // Mark the ith col
+        matrix[i][0] = 0;
+
+        // Mark the jth column
+        if (j !== 0) {
+          matrix[0][j] = 0;
+        } else {
+          col0 = 0;
+        }
+      }
+    }
+  }
+
+  for (let i = 1; i < m; i++) {
+    for (let j = 1; j < n; j++) {
+      if (matrix[i][j] !== 0) {
+        // check for col & row
+        if (matrix[0][j] === 0 || matrix[i][0] === 0) {
+          matrix[i][j] = 0;
+        }
+      }
+    }
+  }
+
+  if (matrix[0][0] === 0) {
+    for (let j = 0; j < n; j++) {
+      matrix[0][j] = 0;
+    }
+  }
+  if (col === 0) {
+    for (let i = 0; i < m; i++) {
+      matrix[i][0] = 0;
+    }
+  }
+  return matrix;
+};
