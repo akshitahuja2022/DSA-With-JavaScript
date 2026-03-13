@@ -35,7 +35,23 @@ var twoSum = function (nums, target) {
 };
 
 /* Sligthly Better approach instead of hashing 
- optimal solution -- O(n)
-
+ 
  2 pointer approach with sorting
-*/
+ this code works when you return number not index
+O(n log n) + O(n) ---> O(n logn) and space O(1)
+ */
+ var twoSum = function(nums,target) {
+    nums = nums.sort((a,b) => a-b);
+    let i=0;
+    let j=nums.length-1;
+    while(i<j){
+        let sum = nums[i] + nums[j];
+        if(sum<target){
+            i++
+        }else if(sum> target){
+            j--
+        }else {
+            return [nums[i], nums[j]]
+        }
+    }
+}
