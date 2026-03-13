@@ -37,3 +37,20 @@ var twoSum = function(numbers, target) {
         
     }
 };
+
+// Optimal Solution - O(n) and O(1)
+var twoSum = function(numbers, target) {
+    let i=0;
+    let j=numbers.length-1
+    while(i<j){
+        sum = numbers[i]+numbers[j];
+
+        if(sum<target){
+            i++
+        }else if(sum>target){
+            j--
+        }else{
+            return [i+1, j+1]
+        }
+    }
+};
