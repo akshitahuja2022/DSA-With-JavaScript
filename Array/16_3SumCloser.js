@@ -24,3 +24,34 @@ var threeSumClosest = function (nums, target) {
   }
   return closetSum;
 };
+
+var threeSumClosest = function(nums, target) {
+    nums = nums.sort((a,b)=> a-b);
+
+    let maxDiff = Infinity
+    let resultSum = 0;
+    for(let i=0; i<nums.length-2; i++){
+        let left = i+1;
+        let right = nums.length-1;
+
+        while(left<right){
+            let sum = nums[i]+nums[left]+nums[right];
+
+             let diff = Math.abs(sum - target);
+             if(diff<maxDiff){
+                maxDiff = diff;
+                resultSum = sum
+             }
+
+            if(sum === target){
+                return sum;
+            }else if(sum <target){
+               left++
+            }else if(sum>target){
+                right--
+            }
+
+        }
+    }
+    return resultSum
+};
