@@ -1,4 +1,4 @@
-// 385 Maximum Size Subarray Sum Equals K
+// 325 Maximum Size Subarray Sum Equals K
 let arr = [1, 2, 3, 1, 1, 1, 1, 4, 2, 3];
 let k = 3;
 
@@ -61,3 +61,31 @@ var longestLength = (arr, k) => {
 };
 
 console.log(longestLength(arr, 3));
+
+/* Question-  GEEKS FOR GEEKS - maximum sum find of subarray k
+ 
+O(n) tc and O(1) space
+
+let arr = [100, 200, 300, 400];
+let k = 3;
+
+var MaximumSubArraySum = (arr, k) => {
+  let resultSum = 0;
+  let low = 0;
+  let high = 1;
+  let sum = 0;
+  for (let i = low; i <= high; i++) {
+    sum = sum + arr[i]; // 300
+  }
+  while (high < arr.length) {
+    resultSum = Math.max(resultSum, sum); // 300
+    low++;
+    high++;
+    sum = sum - arr[low - 1];
+    sum = sum + arr[high];
+  }
+  return resultSum;
+};
+
+console.log(MaximumSubArraySum(arr, k))
+*/
