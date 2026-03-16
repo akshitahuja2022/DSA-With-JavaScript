@@ -1,6 +1,6 @@
 // 344 Reverse String
 
-// Optimal Solution- O(n) and space O(1)
+// Optimal Solution- O(n) and space O(1) 
 var reverseString = function (s) {
   let i = 0;
   let j = s.length - 1;
