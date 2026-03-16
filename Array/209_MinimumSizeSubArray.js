@@ -1,6 +1,6 @@
 // 209. Minimum Size Subarray Sum
 
-// Brute Force solution - O(n^2) time limit exceed
+// Brute Force solution - O(n^2) time limit exceed 
 var minSubArrayLen = function (target, nums) {
   let length = Infinity;
 
